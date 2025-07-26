@@ -44,8 +44,8 @@ Snake-Game/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-/snake-game.git
-   cd snake-game
+   git clone [https://github.com/LaviMishraa/Snake_Game.git]
+   cd Snake-Game
    ```
 
 2. Open `index.html` in your browser:
@@ -57,7 +57,8 @@ Snake-Game/
 
 ## 📸 Screenshots
 
-_Add a screenshot of the game here_
+!![alt text](image.png)
+!![alt text](image-1.png)
 
 ---
 
