@@ -63,8 +63,8 @@ Click:- [https://1stsnake.netlify.app/]
 
 ## 📸 Screenshots
 
-!![alt text](image.png)
-!![alt text](image-1.png)
+!![alt text]()
+!![alt text]()
 
 ---
 
