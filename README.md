@@ -40,6 +40,12 @@ Snake-Game/
 
 ---
 
+## Click to go directly to the Snake Game
+
+Click:- [https://1stsnake.netlify.app/]
+
+---
+
 ## 🛠️ How to Run Locally
 
 1. Clone the repository:
