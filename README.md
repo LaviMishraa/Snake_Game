@@ -1,4 +1,4 @@
-
+## 2022-2023
 #  Snake Game – Web-Based Arcade Game
 
 A modern take on the classic **Snake Game** built using **HTML, CSS, and JavaScript**. This project is responsive, browser-compatible, and enhanced with modern UI elements like Font Awesome icons etc.
@@ -94,4 +94,6 @@ Inspired by the classic **Nokia Snake game**, modernized for the web using core 
 
 ## 📬 Contact
 
+Gmail:- lavimishra9450@gmail.com
+Linkdin:- https://www.linkedin.com/in/lavi-mishra-b5014824b/
 For suggestions or feedback, feel free to open an issue or pull request.
