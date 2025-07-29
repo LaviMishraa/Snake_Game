@@ -1,6 +1,6 @@
 :root {
-  --container-width: 90dvmin;
-  --container-height: 100dvmin;
+  --container-width: 60dvmin;
+  --container-height: 60dvmin;
   --header-height: 10dvmin;
   --footer-height: 40dvmin;
   --board-height: calc(var(--container-height));
@@ -18,13 +18,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: rgba(6, 92, 3, 0.836);
+  background-image: url(../forest-image.jpg);
   flex-direction: column;
 }
 #container {
   width: var(--container-width);
   height: var(--container-height);
   position: relative;
+  margin-bottom: 20px;
   /* background-color: red; */
 }
 #header {
@@ -38,13 +39,16 @@ body {
   font-weight: bold;
   font-size: medium;
   color: cyan;
+  margin-bottom: 20px;
+  border: 2px solid cyan;
+  /* box-shadow: 0 0 10px cyan; */
 }
 #board {
   /* filter: blur(20px); */
   width: 100%;
   border-radius: 2dvmin;
   height: var(--board-height);
-  background-color: #65e928;
+  background-color: #293447;
   display: grid;
   grid-template-rows: repeat(var(--grid-rows), 1fr);
   grid-template-columns: repeat(var(--grid-columns), 1fr);
@@ -52,7 +56,7 @@ body {
 #footer {
   width: 90vmin;
   height: var(--footer-height);
-  background-color: #293447;
+  background-color: transparent;
   display: grid;
   grid-template-rows: auto auto auto;
   grid-template-columns: auto auto auto;
@@ -70,16 +74,16 @@ body {
   animation-direction: alternate; */
 }
 .snake-head {
-  background-color: purple;
+  background-color: #6A5ACD;
   border-radius: 50%;
-  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe,
-    0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #6A5ACD,
+    0 0 0.8rem #6A5ACD, 0 0 2.8rem #6A5ACD, inset 0 0 1.3rem #6A5ACD;
 }
 
 .snake-body {
-  background-color: purple;
-  box-shadow: 0 0 2rem #bc13fe, 0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe,
-    inset 0 0 1.3rem #bc13fe;
+  background-color: #00FFE0;
+  box-shadow: 0 0 2rem #00FFE0, 0 0 0.8rem #00FFE0, 0 0 2.8rem #00FFE0,
+    inset 0 0 1.3rem #00FFE0;
 }
 #footer button {
   width: 65%;
@@ -97,9 +101,9 @@ body {
   background-color: cyan; */
   background: linear-gradient(
     43deg,
-    rgb(65, 88, 208) 0%,
-    rgb(200, 80, 192) 46%,
-    rgb(255, 204, 112) 100%
+    rgb(4, 175, 222) 0%,
+    rgb(4, 2, 4) 46%,
+    rgb(28, 53, 2) 100%
   );
   box-shadow: 0 0 0.3em rgba(255, 255, 255, 0.5);
 
@@ -116,8 +120,8 @@ body {
   display: block;
   background-image: linear-gradient(
     270deg,
-    rgb(0, 183, 255),
-    rgb(255, 48, 255)
+    rgb(4, 175, 222) 8%,
+    rgb(4, 2, 4) 46%
   );
   position: absolute;
   z-index: -3;
@@ -139,8 +143,13 @@ body {
   overflow: hidden;
 }
 #heading {
-  color: rgb(0, 0, 0);
+  color: white;
   margin: 15px 0 15px 0;
+  background-color: #293447;
+  border: 2px solid cyan;
+  border-radius: 35%;
+  padding: 2px;
+  box-shadow: 0 0 10px cyan;
 }
 @keyframes rotate {
   100% {
@@ -170,4 +179,114 @@ body {
 }
 #header #speed,#highscore{
   color: cyan;
+}
+#controls {
+        margin: 1rem;
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+      }
+      #controls button, #controls select {
+        padding: 10px 15px;
+        font-size: 1rem;
+        background-color: #293447;
+        border: 1px solid cyan;
+        color: cyan;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      #controls button:hover, #controls select:hover {
+        background-color: cyan;
+        color: #293447;
+      }
+      /* Floating control gear icon */
+#control-toggle {
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  z-index: 1000;
+  font-size: 22px;
+  background-color: #212837;
+  color: cyan;
+  border: 2px solid cyan;
+  border-radius: 10%;
+  width: 50px;
+  height: 40px;
+  cursor: pointer;
+  box-shadow: 0 0 10px cyan;
+  display: flex;
+  justify-content: center;
+  padding-top: 2px;
+}
+
+/* Sliding panel */
+#control-panel {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 300px;
+  height: 100vh;
+  background-color: #1f2937;
+  color: cyan;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  transition: right 0.3s ease;
+  z-index: 999;
+  box-shadow: -5px 0 25px rgba(0, 255, 255, 0.3);
+}
+
+#control-panel.control-visible {
+  right: 0;
+}
+
+#control-panel button,
+#control-panel select {
+  margin-bottom: 15px;
+  padding: 12px;
+  background-color: #293447;
+  border: 1px solid cyan;
+  color: cyan;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+#control-panel button:hover,
+#control-panel select:hover {
+  background-color: cyan;
+  color: #212837;
+}
+
+.control-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+#levelLabel {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: cyan;
+}
+
+#levelSelect {
+  background-color: #212837;
+  border: 1px solid cyan;
+  color: cyan;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+#levelSelect:hover {
+  background-color: cyan;
+  color: #212837;
+}
+.obstacle {
+  background-color: darkred;
+  border: 2px solid black;
 }
